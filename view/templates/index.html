@@ -3,9 +3,10 @@
 </head>
 
 <body>
-    <form class="box" name="form" method="post" action="/detect" enctype="multipart/form-data">
-        <label for="myfile">Select files:</label>
-        <input type="file" id="myfile" name="myfile"><br><br>
+    <form name="form" method="post" action="/detect" enctype="multipart/form-data">
+        <label >Select files:</label><br><br>
+        <input type="file" id="learnFile" name="learnFile"><br><br>
+        <input type="file" id="anomaliesFile" name="anomaliesFile"><br><br>
         <input type="submit">
     </form>
 </body>
