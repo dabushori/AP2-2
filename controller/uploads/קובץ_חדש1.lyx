@@ -1,0 +1,767 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "Calibri"
+\font_sans "default" "Calibri"
+\font_typewriter "default" "Calibri"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+
+\numeric on
+5
+\numeric off
+(
+\end_layout
+
+\begin_layout Subsection*
+ב.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Section*
+
+\numeric on
+6
+\numeric off
+(
+\end_layout
+
+\begin_layout Standard
+נתונים:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $R=100\frac{MB}{s}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $MSS=1KB$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $d=2500m=2.5km$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $S=2.5\cdot10^{8}\frac{m}{s}=2.5\cdot10^{5}\frac{km}{s}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+בשרת ישנם עשרה קבצים כאשר כל אחד בגודל 
+\begin_inset Formula $10KB$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $timeout=1s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+א.
+\end_layout
+
+\begin_layout Standard
+נחשב את השהיית ההתפשטות עבור חבילה אחת:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+d_{p}=\frac{2.5km}{2.5\cdot10^{5}\frac{km}{s}}=\frac{1}{10^{5}}s=10^{-5}s
+\]
+
+\end_inset
+
+מאחר ומטפלים בלקוחות במקביל מתייחסים לכל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+10
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+חבילות כאילו הם התפשטו כמו אחד כלומר כל פעם מתפשטים 
+\begin_inset Formula $10KB$
+\end_inset
+
+ ולכן נחשב רק התפשטות אחת
+\begin_inset Newline newline
+\end_inset
+
+השהיית השידור של חבילה אחת הוא:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+d_{t}=\frac{1\cdot10^{3}B}{100\cdot10^{6}\frac{B}{s}}=\frac{1}{10^{5}}s=10^{-5}s
+\]
+
+\end_inset
+
+כעת בזמן שחבילה משודרת שאר החבילות מחכות ואז כבר מגיעות עוד חבילות )מכיוון
+ שהשידור זהה בזמן להתפשטות( ולכן החבילות לא מפסיקות לשדר עד שנגמר החבילות
+ 
+\begin_inset Newline newline
+\end_inset
+
+בנוסף הלקוחות מחזירים הודעות קבלה שעולה 
+\begin_inset Formula $10^{-5}$
+\end_inset
+
+ לכל מה שמגיע כלומר )יש לנו 
+\begin_inset Formula $100KB$
+\end_inset
+
+ לשלוח במצטבר אך רק הקבלה האחרונה זה עוד זמן( יש לנו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+100
+\numeric off
+ שידורים ועוד השידור האחרון: )
+\begin_inset Formula $3d_{p}$
+\end_inset
+
+ על הלחיצת ידיים והבקשה הראשונה(
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula 
+\[
+d_{ete}=100\cdot d_{t}+2\cdot d_{p}+3\cdot d_{p}=100\cdot10^{-5}+5\cdot10^{-5}=1.05ms
+\]
+
+\end_inset
+
+ ב.
+\end_layout
+
+\begin_layout Standard
+נשים לב ש- 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ לא צריך חוצץ גדול מכיוון שהחבילות שנשלחות ממנו השידור שלהן זניח.
+\begin_inset Newline newline
+\end_inset
+
+לעומת זאת ב- 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+ יש 
+\begin_inset Formula $10KB$
+\end_inset
+
+ בהתחלה בתוך החוצץ ולאחר השידור של החבילה השלישית מגיע 
+\begin_inset Formula $ack$
+\end_inset
+
+ על החבילה הראשונה )כי לוקח בדיוק פרק זמן של שידור ופעמיים התפשטות( ולכן
+ כל פעם מאז יתווספו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ חבילות חדשות לחוצץ ואחת תשודר )כי כל פעם מגיע 
+\begin_inset Formula $ack$
+\end_inset
+
+( ולכן מכיוון שיש יש 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+7
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+חבילות בחוצץ וכל פעם מתווספים
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+עד שיגמרו ה
+\numeric on
+90
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הנוספות שצריכות להיכנס כלומר נוסיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+במשך
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+45
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+פעמים ונשדר גם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+45
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+פעמים ולכן מספר החבילות המקסימלי שימתינו בחוצץ הוא 
+\begin_inset Formula $7+45\cdot2-45=52$
+\end_inset
+
+ כלומר 
+\begin_inset Formula $52KB$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+
+\numeric on
+7
+\numeric off
+(
+\end_layout
+
+\begin_layout Standard
+נתונים:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $d=60,000km$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $S=300,000\frac{km}{s}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $d_{p}=0.2s$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $Buffer=200,000B=200KB$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $R=10\frac{MB}{s}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $BufferRead=8\frac{MB}{s}$
+\end_inset
+
+ הקצב שבו קוראת האפליקציה מהבאפר
+\end_layout
+
+\begin_layout Subsection*
+א.
+\end_layout
+
+\begin_layout Standard
+אם המקבל יפרסם חלון גדול יותר מהבאפר אז המידע יגיע מהר יותר, למרות שאין
+ גודל מתאים האפליקציה כל הזמן מרוקנת את הבאפר ומפנה מקום ולכן הקצב יגדל.
+ אנחנו יכולים להבניח שהבאפר מתרוקן יחסית מהר להתפשטות ולכן עדיף לשלוח את
+ חלונות גדולים יותר.
+\end_layout
+
+\begin_layout Subsection*
+ב.
+\end_layout
+
+\begin_layout Standard
+נרצה למצוא את גודל הבאפר המקסימלי שיכול להיות מפורסם ולכן נחשב את גודל הבאפר
+ כפול הקצב של ההכנסה לבאפר חלקי כמה שיוצא מהחיסור של הכניסה לבאפר מהיצאה
+ מהבאפר שזה בעצם גודל הבאפר כפול קצב העלאה חלקי כמה מתווסף
+\begin_inset Newline newline
+\end_inset
+
+חישוב:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{Buffer\cdot R}{R-BufferRead}=\frac{Buffer}{\frac{R-BufferRead}{R}}=\frac{Buffer}{1-\frac{BufferRead}{R}}=\frac{200KB}{1-\frac{8\frac{KB}{s}}{10\frac{KB}{s}}}=\frac{200KB}{\frac{1}{5}}=10^{6}B
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

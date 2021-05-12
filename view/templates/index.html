@@ -1,12 +1,89 @@
 <head>
     <title>Hello Sexy Boy</title>
+    <style>
+        body,
+        html {
+            background-color: #EBECF0;
+        }
+
+        body,
+        input{
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: -0.2px;
+            font-size: 16px;
+        }
+
+        div{
+            color: #BABECC;
+            text-shadow: 1px 1px 1px #FFF;
+        }
+
+        form {
+            padding: 16px;
+            width: 16px*20;
+            margin: 0 auto;
+        }
+
+        .segment {
+            padding: 16px*2 0;
+            text-align: center;
+        }
+
+        input {
+            border: 0;
+            outline: 0;
+            font-size: 16px;
+            border-radius: 16px*20;
+            padding: 16px;
+            background-color: #EBECF0;
+            text-shadow: 1px 1px 0 #FFF;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 16px*1.5;
+            width: 100%;
+            font-size: 32px;
+        }
+
+        input {
+            margin-right: 16px/2;
+            box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+            width: 100%;
+            box-sizing: border-box;
+            transition: all 0.2s ease-in-out;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        iframe {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 16px;
+            box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 
 <body>
-    <form name="form" method="post" action="/detect" enctype="multipart/form-data">
-        <label >Select files:</label><br><br>
-        <input type="file" id="learnFile" name="learnFile"><br><br>
-        <input type="file" id="anomaliesFile" name="anomaliesFile"><br><br>
-        <input type="submit">
-    </form>
+    <div class="segment">
+        <form class="form" name="form" method="post" action="/detect" enctype="multipart/form-data"
+            target="resultsFrame">
+            <label>Select files:</label><br><br>
+            <div class="input-group">
+                <input type="file" id="learnFile" name="learnFile"><br><br>
+                <input type="file" id="anomaliesFile" name="anomaliesFile"><br><br>
+                <input type="submit">
+            </div>
+        </form>
+        <iframe name="resultsFrame"></iframe>
+    </div>
 </body>
