@@ -177,6 +177,7 @@ class Results : public Command {
 public:
   Results(DefaultIO *dio) : Command(dio, "display results") {}
   virtual void execute(SharedState *sharedState) {
+    dio->write("Results:\n");
     for_each(sharedState->report.begin(), sharedState->report.end(),
              [this](AnomalyReport &ar) {
                dio->write(ar.timeStep);
