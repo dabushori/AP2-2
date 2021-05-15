@@ -64,8 +64,22 @@ class AnomalyDetectionClient:
 
     def parse_results(self, results: list):
         # to implement
-        print(results)
-        return 'end of parse_results' # parsed_results
+        anomalies = []
+        for line in results :
+            d = {}
+            splits = line.split('\t')
+            i = 1
+            for word in splits :
+                if i == 1 :
+                    d["time_step"] = word
+                if i == 2 :
+                    d["anomaly_1"] = word
+                if i == 3 :
+                    d["anomaly_2"] = word
+                i += 1
+            anomalies.append(d)
+        dictonary = {"anomalies" : anomalies}
+        return dictonary # parsed_results
 
 
     def close(self):

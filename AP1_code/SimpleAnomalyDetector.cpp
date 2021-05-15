@@ -1,7 +1,7 @@
 /*
  * SimpleAnomalyDetector.cpp
  *
- *  Created on: 8 баечЧ 2020
+ *  Created on: 8 пїЅпїЅпїЅпїЅпїЅ 2020
  *      Author: Eli
  */
 
@@ -88,7 +88,7 @@ vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries& ts){
 		vector<float> y=ts.getAttributeData(c.feature2);
 		for(size_t i=0;i<x.size();i++){
 			if(isAnomalous(x[i],y[i],c)){
-				string d=c.feature1 + "-" + c.feature2;
+				string d=c.feature1 + "\t" + c.feature2;
 				v.push_back(AnomalyReport(d,(i+1)));
 			}
 		}
