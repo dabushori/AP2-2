@@ -1,12 +1,17 @@
 import os
 from flask import Flask, render_template, request, send_file
 import sys
+import shutil
 currentdir = os.path.dirname(os.path.realpath(__file__))
 parentdir = os.path.dirname(currentdir)
 sys.path.append(parentdir)
 from model import anomaly_detection
 
+# clean the uploads folder
 uploads_folder='controller\\uploads'
+if os.path.isdir(uploads_folder):
+    shutil.rmtree(uploads_folder)
+os.mkdir(uploads_folder)
 
 template_folder = '..\\view\\templates'
 app = Flask(__name__, template_folder=template_folder)
@@ -28,7 +33,14 @@ def detect():
     anomaliesFile = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
     file.save(anomaliesFile)
 
-    resultsFile = detector.detect_anomalies(learnFile, anomaliesFile, True) # to change
+    algorithm = request.form.get('algorithm')
+    is_hybrid = False
+    if (algorithm == 'hybrid'):
+        is_hybrid = True
+
+    print(is_hybrid)
+    
+    resultsFile = detector.detect_anomalies(learnFile, anomaliesFile, is_hybrid)
     resultsFile = os.path.join('..', resultsFile)
 
     return send_file(resultsFile)

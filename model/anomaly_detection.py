@@ -97,7 +97,6 @@ class AnomalyDetector:
         self.server_port = server_port
 
         self.results_dir = os.path.join('model', 'results')
-        print(self.results_dir)
         if os.path.isdir(self.results_dir):
             shutil.rmtree(self.results_dir)
         os.mkdir(self.results_dir)
@@ -107,7 +106,6 @@ class AnomalyDetector:
         client = AnomalyDetectionClient(self.server_ip, self.server_port)
         res = client.detect_anomalies(pathToLearnFile, pathToAnomaliesFile, is_hybrid)
         client.close()
-        print(self.results_dir)
         name = os.path.join(self.results_dir, 'results{}.json'.format(self.results_counter))
         with open(name, 'w') as fp:
             json.dump(res, fp)
