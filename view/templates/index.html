@@ -116,17 +116,11 @@
         </form>
         <iframe name="resultsFrame" id="resultsFrame"></iframe>
         <script>
-            // Selecting the iframe element
             var frame = document.getElementById("resultsFrame");
-              
-            // Adjusting the iframe height onload event
             frame.onload = function()
-            // function execute while load the iframe
             {
-              // set the height of the iframe as 
-              // the height of the iframe content
-              frame.style.height = 
-              (frame.contentWindow.document.body.scrollHeight+5) + 'px';
+                val = Math.max(frame.contentWindow.document.body.scrollHeight + 5, 50)
+                frame.style.height = val + 'px';
                   
             }
             </script>

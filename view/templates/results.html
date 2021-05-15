@@ -12,6 +12,9 @@
 </head>
 
 <body>
+    {% if data['anomalies'] == [] %}
+    <h1>No Anomalies!</h1>
+    {% else %}
     <table style="text-align: center; border-width: 1px">
         <thead>
             <tr>
@@ -30,5 +33,6 @@
             {% endfor %}
         </tbody>
     </table>
+    {% endif %}
 
 </body>

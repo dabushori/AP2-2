@@ -5,15 +5,9 @@ import shutil
 
 class AnomalyDetectionClient:
     def __init__(self, ip: str, port: int):
-        try:
-            self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            self.sock.connect((ip, port))
-            
-        except Exception:
-            print('error')
-            if (self.sock):
-                self.sock.close()
-
+        self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.sock.connect((ip, port))
+        
 
     def send_message(self, message: str):
         self.sock.send(message.encode()) # encode message
@@ -104,11 +98,15 @@ class AnomalyDetector:
         
 
     def detect_anomalies(self, pathToLearnFile: str, pathToAnomaliesFile: str, is_hybrid: bool):
-        client = AnomalyDetectionClient(self.server_ip, self.server_port)
-        res = client.detect_anomalies(pathToLearnFile, pathToAnomaliesFile, is_hybrid)
-        client.close()
-        name = os.path.join(self.results_dir, 'results{}.json'.format(self.results_counter))
-        with open(name, 'w') as fp:
-            json.dump(res, fp)
-        self.results_counter += 1
-        return name
+        try:
+            client = AnomalyDetectionClient(self.server_ip, self.server_port)
+            res = client.detect_anomalies(pathToLearnFile, pathToAnomaliesFile, is_hybrid)
+            client.close()
+            name = os.path.join(self.results_dir, 'results{}.json'.format(self.results_counter))
+            with open(name, 'w') as fp:
+                json.dump(res, fp)
+            self.results_counter += 1
+            return name
+        except socket.error:
+            print('An error occured in the server')
+            return None

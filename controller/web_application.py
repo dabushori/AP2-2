@@ -21,8 +21,8 @@ os.mkdir(uploads_folder)
 
 template_folder = os.path.join('..', os.path.join('view', 'templates'))
 static_folder = os.path.join('..', os.path.join('view', 'static'))
-app = Flask(__name__, template_folder=template_folder,
-            static_folder=static_folder)
+
+app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
 app.config['UPLOAD_FOLDER'] = uploads_folder
 
 if (len(sys.argv) != 3):
@@ -63,8 +63,9 @@ def detect():
     if (algorithm == 'hybrid'):
         is_hybrid = True
 
-    resultsFile = detector.detect_anomalies(
-        learnFile, anomaliesFile, is_hybrid)
+    resultsFile = detector.detect_anomalies(learnFile, anomaliesFile, is_hybrid)
+    if resultsFile == None:
+        return '<h1> An error occured </h1>'
 
     if 'table_view' in request.form:
         return page_generator.genetrate_results_page(resultsFile)
@@ -74,3 +75,4 @@ def detect():
 
 if __name__ == '__main__':
     app.run(port=8080)
+        
