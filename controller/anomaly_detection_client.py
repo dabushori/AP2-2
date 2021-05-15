@@ -5,7 +5,6 @@ class AnomalyDetectionClient:
         try:
             self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.sock.connect((ip, port))
-            self.sock.settimeout(1)
             
         except Exception:
             print('error')
@@ -78,6 +77,6 @@ class AnomalyDetectionClient:
 
 
 if __name__ == '__main__':
-    c = AnomalyDetectionClient('192.168.1.125', 8080)
+    c = AnomalyDetectionClient('', 8080)
     res = c.upload_files('test/learn.csv', 'test/anomaly.csv', True)
     print(res)
