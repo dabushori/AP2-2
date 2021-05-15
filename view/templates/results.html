@@ -1,0 +1,34 @@
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin-left: auto; 
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <table style="text-align: center; border-width: 1px">
+        <thead>
+            <tr>
+                <th>Time Step</th>
+                <th>Property 1</th>
+                <th>Property 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for a in data['anomalies'] %}
+            <tr>
+                <td>{{ a['time_step'] }}</td>
+                <td>{{ a['property_1'] }}</td>
+                <td>{{ a['property_2'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>

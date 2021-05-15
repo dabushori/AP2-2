@@ -58,7 +58,8 @@ class AnomalyDetectionClient:
         while 'Done.' not in res_lines:
             msg = self.sock.recv(4096).decode()
             res += msg
-            res_lines.extend(msg.split('\n'))
+            res_lines = res.split('\n')
+            # res_lines.extend(msg.split('\n'))
         start = res_lines.index('Results:') + 1
         end = res_lines.index('Done.')
         return res_lines[start:end]
@@ -67,7 +68,7 @@ class AnomalyDetectionClient:
     def parse_results(self, results: list):
         # to implement
         anomalies = []
-        for line in results :
+        for line in results:
             d = {}
             splits = line.split('\t')
             i = 1
@@ -75,9 +76,9 @@ class AnomalyDetectionClient:
                 if i == 1 :
                     d["time_step"] = word
                 if i == 2 :
-                    d["anomaly_1"] = word
+                    d["property_1"] = word
                 if i == 3 :
-                    d["anomaly_2"] = word
+                    d["property_2"] = word
                 i += 1
             anomalies.append(d)
         dictonary = {"anomalies" : anomalies}

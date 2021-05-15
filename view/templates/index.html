@@ -79,26 +79,56 @@
             font-size: 16px;
             box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
             width: 100%;
+            height: auto;
             box-sizing: border-box;
         }
     </style>
 </head>
 
 <body>
+    <script>
+        function validate_csv_files() {
+            var learn_file = document.getElementById('learnFile').value;
+            var anomaly_file = document.getElementById('anomaliesFile').value;
+            console.log('learn:' + learn_file.split('.').pop())
+            console.log('anomaly:' + anomaly_file.split('.').pop())
+            if (learn_file.split('.').pop() == 'csv' && anomaly_file.split('.').pop() == 'csv') {
+                return true;
+            }
+            alert('Please enter only .csv files!')
+            return false
+        }
+    </script>
     <div class="segment">
-        <form class="form" name="form" method="post" action="/detect" enctype="multipart/form-data"
-            target="resultsFrame">
+        <form class="form" name="form" id='form' method="post" action="/detect" enctype="multipart/form-data"
+            target="resultsFrame" onsubmit="return validate_csv_files()">
             <label>Select files:</label><br><br>
             <div class="input-group">
-                <input type="file" id="learnFile" name="learnFile"><br><br>
-                <input type="file" id="anomaliesFile" name="anomaliesFile"><br><br>
+                <input type="file" id="learnFile" name="learnFile" required><br><br>
+                <input type="file" id="anomaliesFile" name="anomaliesFile" required><br><br>
                 <select id="algorithm" name="algorithm">
                     <option value="line_regression">Line Regrssion Algorithm</option>
                     <option value="hybrid">Hybrid Algorithm</option>
                 </select>
-                <input type="submit">
+                <input type="submit" name="json_view" value="View Results As A JSON File">
+                <input type="submit" name="table_view" value="View Results In A Table">
             </div>
         </form>
-        <iframe name="resultsFrame"></iframe>
+        <iframe name="resultsFrame" id="resultsFrame"></iframe>
+        <script>
+            // Selecting the iframe element
+            var frame = document.getElementById("resultsFrame");
+              
+            // Adjusting the iframe height onload event
+            frame.onload = function()
+            // function execute while load the iframe
+            {
+              // set the height of the iframe as 
+              // the height of the iframe content
+              frame.style.height = 
+              (frame.contentWindow.document.body.scrollHeight+5) + 'px';
+                  
+            }
+            </script>
     </div>
 </body>
