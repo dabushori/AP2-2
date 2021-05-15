@@ -5,6 +5,7 @@ class AnomalyDetectionClient:
         try:
             self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.sock.connect((ip, port))
+            self.sock.settimeout(1)
             print('connected to server')
             
         except Exception:
