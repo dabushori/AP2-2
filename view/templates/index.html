@@ -7,13 +7,14 @@
         }
 
         body,
-        input{
+        input,
+        select {
             font-family: 'Montserrat', sans-serif;
             letter-spacing: -0.2px;
             font-size: 16px;
         }
 
-        div{
+        div {
             color: #BABECC;
             text-shadow: 1px 1px 1px #FFF;
         }
@@ -29,7 +30,8 @@
             text-align: center;
         }
 
-        input {
+        input,
+        select {
             border: 0;
             outline: 0;
             font-size: 16px;
@@ -45,8 +47,16 @@
             width: 100%;
             font-size: 32px;
         }
+        select {
+            background-image: url( {{url_for('static', filename='menu_arrow.png')}} );
+            background-repeat: no-repeat;
+            background-size: 2em auto;
+            background-position: 0.4em center;
+            background-position-x: right;
+        }
 
-        input {
+        input,
+        select {
             margin-right: 16px/2;
             box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
             width: 100%;
@@ -61,6 +71,7 @@
             align-items: center;
             justify-content: flex-start;
         }
+
         iframe {
             display: flex;
             align-items: center;

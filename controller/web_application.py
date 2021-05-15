@@ -14,7 +14,8 @@ if os.path.isdir(uploads_folder):
 os.mkdir(uploads_folder)
 
 template_folder = '..\\view\\templates'
-app = Flask(__name__, template_folder=template_folder)
+static_folder = '..\\view\\static'
+app = Flask(__name__, template_folder=template_folder, static_folder=static_folder)
 app.config['UPLOAD_FOLDER'] = uploads_folder
 
 detector = anomaly_detection.AnomalyDetector('192.168.1.167', 8081)
