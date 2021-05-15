@@ -43,11 +43,7 @@ class AnomalyDetectionClient:
         
         # get the results
         self.send_message('5\n')
-        
-        # recieve until 'Done.'
         results = self.recieve_results()
-        # while ...:
-        #     results ...
 
         return self.parse_results(results)
 
@@ -67,6 +63,7 @@ class AnomalyDetectionClient:
 
 
     def parse_results(self, results: list):
+        # to implement
         print(results)
         return 'end of parse_results' # parsed_results
 
