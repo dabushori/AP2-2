@@ -3,7 +3,7 @@ import socket
 class AnomalyDetectionClient:
     def __init__(self, ip: str, port: int):
         try:
-            self.sock = socket.socket()
+            self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.sock.connect((ip, port))
             print('connected to server')
             
@@ -58,8 +58,9 @@ class AnomalyDetectionClient:
 
     def recieve_results(self):
         res = ''
+        msg = None
         try:
-            while True:    
+            while msg != '':
                 msg = self.sock.recv(4096).decode()
                 res += msg
         except socket.error:
@@ -81,5 +82,5 @@ class AnomalyDetectionClient:
 
 if __name__ == '__main__':
     c = AnomalyDetectionClient('192.168.1.125', 8080)
-    res = c.upload_files('learn.csv', 'anomalies.csv', True)
+    res = c.upload_files('test/learn.csv', 'test/anomaly.csv', True)
     print(res)
