@@ -141,6 +141,6 @@ For example, if the anomaly detection server is running on the the current pc (l
 4. Then, run our application by following the steps in the previous chapter.
 
 ## Links 
-Take a look at the UML diagram that shows the structure of our project [here]().
+Take a look at the UML diagram that shows the structure of our project [here](https://github.com/dabushori/AP2-2/blob/main/UML.pdf).
 
 Also, take a look at the explaination video we made [right over here]().
