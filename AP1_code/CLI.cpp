@@ -11,8 +11,9 @@ CLI::CLI(DefaultIO* dio) {
 		commands.push_back(new Exit(dio));
 }
 
-void CLI::start(){
-	SharedState sharedState;
+void CLI::start(int filesID){
+	SharedState sharedState(filesID);
+	
 	int index=-1;
 	while(index!=6){ // can be changed
 		dio->write("Welcome to the Anomaly Detection Server.\n");

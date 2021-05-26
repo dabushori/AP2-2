@@ -2,6 +2,7 @@ import socket
 import json
 import os
 import shutil
+import threading
 
 class AnomalyDetectionClient:
     def __init__(self, ip: str, port: int):
@@ -83,11 +84,12 @@ class AnomalyDetectionClient:
         self.send_message('7\n')
         self.sock.close()
 
-resultsCounter = 0
 
 class AnomalyDetector:
+
+    resultsCounter = 0
+
     def __init__(self, server_ip: str, server_port: int):
-        self.results_counter = 0
         self.server_ip = server_ip
         self.server_port = server_port
 
@@ -102,10 +104,9 @@ class AnomalyDetector:
             client = AnomalyDetectionClient(self.server_ip, self.server_port)
             res = client.detect_anomalies(pathToLearnFile, pathToAnomaliesFile, is_hybrid)
             client.close()
-            name = os.path.join(self.results_dir, 'results{}.json'.format(self.results_counter))
+            name = os.path.join(self.results_dir, 'results_{}_{}.json'.format(os.getpid(),threading.get_ident()))
             with open(name, 'w') as fp:
                 json.dump(res, fp)
-            self.results_counter += 1
             return name
         except socket.error:
             print('An error occured in the server')

@@ -47,6 +47,7 @@ detector = anomaly_detection.AnomalyDetector(server_ip, server_port)
 def anomaly_detection_web_app():
     return page_generator.generate_index_page()
 
+resultsCounter = 0
 
 @app.route("/detect", methods=["POST"])
 def detect():
@@ -63,8 +64,10 @@ def detect():
     if (algorithm == 'hybrid'):
         is_hybrid = True
 
+    global detector
     resultsFile = detector.detect_anomalies(learnFile, anomaliesFile, is_hybrid)
     if resultsFile == None:
+        detector = anomaly_detection.AnomalyDetector(server_ip, server_port)
         return '<h1> An error occured </h1>'
 
     if 'table_view' in request.form:
@@ -74,4 +77,4 @@ def detect():
 
 
 if __name__ == '__main__':
-    app.run(port=8080)
+    app.run(port=8080, threaded=False, processes=5)
