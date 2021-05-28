@@ -26,7 +26,7 @@ public:
     ofstream out(fileName);
     string s = "";
     while ((s = read()) != "done\n") {
-      out << s << endl;
+      out << s;
     }
     out.close();
   }
