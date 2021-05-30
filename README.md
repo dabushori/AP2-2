@@ -165,4 +165,4 @@ For example, if the anomaly detection server is running on the the current pc (l
 
 Take a look at the UML diagram that shows the structure of our project [here](https://github.com/dabushori/AP2-2/blob/main/UML.pdf).
 
-Also, take a look at the explaination video we made [right over here]().
+Also, take a look at the explaination video we made [right over here](https://youtu.be/TNvdPw4LB8k).
